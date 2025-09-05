@@ -4,136 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Disha 🎉</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-family: 'Segoe UI', cursive, sans-serif;
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
-      overflow-x: hidden;
-    }
-    h1 {
-      margin-top: 20px;
-      font-size: 3em;
-      color: #ff1493;
-      animation: fadeIn 2s ease-in-out;
-    }
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin-top: 20px;
-      border: 5px solid white;
-      box-shadow: 0 0 20px pink;
-    }
-    button {
-      margin: 20px;
-      padding: 12px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 25px;
-      background: #ff4081;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #e91e63;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* Balloons */
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 50px;
-      height: 70px;
-      border-radius: 50%;
-      background: red;
-      animation: float 6s infinite;
-    }
-    @keyframes float {
-      from {transform: translateY(0);}
-      to {transform: translateY(-120vh);}
-    }
-
-    /* Cake */
-    #cake {
-      display: none;
-      margin: 30px auto;
-      width: 200px;
-      height: 150px;
-      background: #ffcccb;
-      border-radius: 10px;
-      position: relative;
-    }
-    #cake::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 30px;
-      background: chocolate;
-      top: -30px;
-      border-radius: 10px 10px 0 0;
-    }
-    .slice {
-      width: 100%;
-      height: 100%;
-      background: pink;
-      display: none;
-    }
-
-    /* Memories page */
-    #memories {
-      display: none;
-      margin-top: 20px;
-    }
-    #memories img {
-      width: 300px;
-      height: auto;
-      border-radius: 15px;
-      margin: 10px;
-      opacity: 0;
-      animation: fadePic 2s forwards;
-    }
-    @keyframes fadePic {
-      to {opacity: 1;}
-    }
-
-    /* Secret message */
-    #message {
-      display: none;
-      font-size: 24px;
-      font-family: 'Brush Script MT', cursive;
-      color: #4a148c;
-      margin: 40px;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    /* Fireworks (crackers) */
-    canvas {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999;
-    }
-  </style>
-</head>
-<body>
-
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Disha 🎉</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -167,8 +37,6 @@
     <img src="Memories/pic-9.jpg" alt="Memory 9">
     <img src="Memories/pic-10.jpg" alt="Memory 10">
     <img src="Memories/pic-11.jpg" alt="Memory 11">
-
-    <!-- Add more up to 15 -->
   </div>
 
   <!-- Secret Message -->
@@ -181,15 +49,23 @@
   <canvas id="fireworks"></canvas>
 
   <script>
+    // List of custom balloon images
+    const balloonImages = [
+      "Memories/balloon1.png",
+      "Memories/balloon2.png"
+    ];
+
     function flyBalloons() {
-      for (let i = 0; i < 20; i++) {
-        let balloon = document.createElement("div");
+      for (let i = 0; i < 15; i++) {
+        let balloon = document.createElement("img");
         balloon.className = "balloon";
+        balloon.src = balloonImages[Math.floor(Math.random() * balloonImages.length)];
         balloon.style.left = Math.random() * 100 + "vw";
-        balloon.style.background = `hsl(${Math.random()*360},100%,60%)`;
-        balloon.style.animationDuration = (Math.random()*3+3) + "s";
+        balloon.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        balloon.style.width = "60px";
+        balloon.style.height = "80px";
         document.body.appendChild(balloon);
-        setTimeout(()=> balloon.remove(), 6000);
+        setTimeout(()=> balloon.remove(), 7000);
       }
     }
 
@@ -256,4 +132,3 @@
   </script>
 </body>
 </html>
-
