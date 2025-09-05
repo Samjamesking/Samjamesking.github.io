@@ -1,98 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🎉 Happy Birthday!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Disha 🎉</title>
   <style>
-    :root{
-      --bg-1:#2c1a33;
-      --bg-2:#4a2e5b;
-      --accent:#ffb3c1;
-      --accent-2:#ffe4e1;
-      --ink:#f8f0f5;
-      --muted:#e8d7e2;
-      --glass: rgba(255,255,255,.08);
-      --shadow: 0 20px 50px rgba(0,0,0,.35);
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: 'Segoe UI', cursive, sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      overflow-x: hidden;
     }
-    *{ box-sizing:border-box }
-    html,body{ height:100% }
-    body{
-      margin:0; font-family: Inter, sans-serif; color:var(--ink);
-      background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
-      overflow-x:hidden;
+    h1 {
+      margin-top: 20px;
+      font-size: 3em;
+      color: #ff1493;
+      animation: fadeIn 2s ease-in-out;
     }
-    .wrap{ min-height:100vh; display:grid; place-items:center; padding:24px; position:relative; }
-    .balloons{ position:absolute; inset:0; pointer-events:none; }
-    .balloon{ position:absolute; width:48px; height:60px; border-radius:50% 50% 45% 55% / 55% 55% 45% 45%; background: var(--bcolor); animation: floatUp var(--speed) linear infinite; transform: translateY(110%); }
-    .balloon::after{ content:""; position:absolute; bottom:-16px; left:50%; width:2px; height:48px; background:rgba(255,255,255,.6); transform:translateX(-50%); }
-    @keyframes floatUp{ to { transform: translateY(-120%); } }
-    .card{ width:min(900px, 100%); background: linear-gradient(to bottom right, rgba(255,255,255,.10), rgba(255,255,255,.06)); border:1px solid rgba(255,255,255,.14); backdrop-filter: blur(10px); border-radius: 24px; box-shadow: var(--shadow); padding: clamp(20px, 4vw, 40px); display:grid; gap:18px; grid-template-columns: 1.2fr .8fr; align-items:center; }
-    @media (max-width:800px){ .card{ grid-template-columns:1fr; text-align:center } }
-    .title{ font-family:"Playfair Display", serif; font-weight:800; font-size: clamp(36px, 5vw, 64px); line-height:1.05; }
-    .subtitle{ color:var(--muted); }
-    .btn{ display:inline-block; padding:12px 18px; border-radius:14px; font-weight:600; text-decoration:none; color:#1b0b21; background: linear-gradient(135deg, var(--accent), #ff9f9f); box-shadow: 0 10px 24px rgba(0,0,0,.25); border:none; cursor:pointer; }
-    .ghost{ background: transparent; color: var(--ink); border:1px dashed rgba(255,255,255,.35); box-shadow:none }
-    .photo{ justify-self:center; width:min(320px, 85%); aspect-ratio: 1/1; border-radius: 24px; overflow:hidden; border:1px solid rgba(255,255,255,.2); box-shadow: var(--shadow); }
-    .photo img{ width:100%; height:100%; object-fit:cover; }
-    footer{ color:#e8d7e2; text-align:center; margin-top: 16px; font-size: 13px }
-    .modal{ position:fixed; inset:0; display:none; place-items:center; background: rgba(6, 2, 14, .65); z-index:5; padding:20px }
-    .modal:target{ display:grid }
-    .modal .sheet{ background: linear-gradient(to bottom right, rgba(255,255,255,.12), rgba(255,255,255,.06)); border:1px solid rgba(255,255,255,.18); backdrop-filter: blur(12px); border-radius:20px; max-width:720px; width:min(720px, 96%); padding:24px; box-shadow: var(--shadow); }
-    .sheet h3{ font-family:"Playfair Display", serif; font-size: clamp(24px, 3.6vw, 34px) }
-    .close{ float:right; text-decoration:none; font-weight:700; font-size: 22px; color: #fff; }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+      border: 5px solid white;
+      box-shadow: 0 0 20px pink;
+    }
+    button {
+      margin: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      background: #ff4081;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e91e63;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 50px;
+      height: 70px;
+      border-radius: 50%;
+      background: red;
+      animation: float 6s infinite;
+    }
+    @keyframes float {
+      from {transform: translateY(0);}
+      to {transform: translateY(-120vh);}
+    }
+
+    /* Cake */
+    #cake {
+      display: none;
+      margin: 30px auto;
+      width: 200px;
+      height: 150px;
+      background: #ffcccb;
+      border-radius: 10px;
+      position: relative;
+    }
+    #cake::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      background: chocolate;
+      top: -30px;
+      border-radius: 10px 10px 0 0;
+    }
+    .slice {
+      width: 100%;
+      height: 100%;
+      background: pink;
+      display: none;
+    }
+
+    /* Memories page */
+    #memories {
+      display: none;
+      margin-top: 20px;
+    }
+    #memories img {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      margin: 10px;
+      opacity: 0;
+      animation: fadePic 2s forwards;
+    }
+    @keyframes fadePic {
+      to {opacity: 1;}
+    }
+
+    /* Secret message */
+    #message {
+      display: none;
+      font-size: 24px;
+      font-family: 'Brush Script MT', cursive;
+      color: #4a148c;
+      margin: 40px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Fireworks (crackers) */
+    canvas {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="balloons">
-      <div class="balloon" style="--speed:20s; --bcolor:#ffb3c1; left:5%; animation-delay:0s"></div>
-      <div class="balloon" style="--speed:22s; --bcolor:#ffc2d1; left:20%; animation-delay:2s"></div>
-      <div class="balloon" style="--speed:21s; --bcolor:#ffd4e0; left:35%; animation-delay:1s"></div>
-      <div class="balloon" style="--speed:24s; --bcolor:#ffe6eb; left:50%; animation-delay:3s"></div>
-      <div class="balloon" style="--speed:19s; --bcolor:#e8d7e2; left:65%; animation-delay:.6s"></div>
-    </div>
-    <main class="card" id="card">
-      <section>
-        <h1 class="title">Happy Birthday, <span style="color:var(--accent-2)">Love</span>! 🎉</h1>
-        <p class="subtitle">May your life be filled with warmth, joy, and endless love.</p>
-        <div class="cta">
-          <a class="btn" href="#surprise">Open Your Surprise ✨</a>
-          <button id="play-music" class="btn ghost">▶ Play Music</button>
-        </div>
-      </section>
-      <aside class="photo">
-        <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800" alt="Happy Birthday" />
-      </aside>
-    </main>
-    <footer>Built with ❤️ for someone special.</footer>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Disha 🎉</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Happy Birthday Disha 🎂🎉</h1>
+  <img src="Disha2.jpg" alt="Disha">
+
+  <div>
+    <button onclick="flyBalloons()">Fly the Balloons 🎈</button>
+    <button onclick="cutCake()">Cut the Cake 🎂</button>
+    <button onclick="showMemories()">Memories 📸</button>
+    <button onclick="showMessage()">Secret Message 💌</button>
+    <button onclick="lightCrackers()">Light the Crackers 🎆</button>
   </div>
 
-  <audio id="bg-music" src="assets/music.mp3" loop></audio>
+  <!-- Cake -->
+  <div id="cake">
+    <div class="slice"></div>
+  </div>
 
-  <section id="surprise" class="modal">
-    <div class="sheet">
-      <a class="close" href="#card">×</a>
-      <h3>🎁 My Birthday Wish for You</h3>
-      <p>Today and always, you deserve all the love in the world. Thank you for being the light in my life.</p>
-      <p>Here’s to more laughter, more dreams, and more moments that make life magical.</p>
-      <p style="margin-top:14px">— From Your Name</p>
-    </div>
-  </section>
+  <!-- Memories -->
+  <div id="memories">
+    <img src="memories/pic-1.jpg" alt="Memory 1">
+    <img src="memories/pic-2.jpg" alt="Memory 2">
+    <img src="memories/pic-3.jpg" alt="Memory 3">
+    <img src="memories/pic-4.jpg" alt="Memory 4">
+    <img src="memories/pic-5.jpg" alt="Memory 5">
+    <img src="memories/pic-6.jpg" alt="Memory 6">
+    <img src="memories/pic-7.jpg" alt="Memory 7">
+    <img src="memories/pic-8.jpg" alt="Memory 8">
+    <img src="memories/pic-9.jpg" alt="Memory 9">
+    <img src="memories/pic-10.jpg" alt="Memory 10">
+    <img src="memories/pic-11.jpg" alt="Memory 11">
+
+    <!-- Add more up to 15 -->
+  </div>
+
+  <!-- Secret Message -->
+  <div id="message">
+    💖 Dear Disha, Wishing you all the happiness, love, and joy on your special day.  
+    May your life always shine bright just like your smile. 💖  
+  </div>
+
+  <!-- Fireworks -->
+  <canvas id="fireworks"></canvas>
 
   <script>
-    const btn = document.getElementById('play-music');
-    const audio = document.getElementById('bg-music');
-    btn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        btn.textContent = '⏸ Pause Music';
-      } else {
-        audio.pause();
-        btn.textContent = '▶ Play Music';
+    function flyBalloons() {
+      for (let i = 0; i < 20; i++) {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.background = `hsl(${Math.random()*360},100%,60%)`;
+        balloon.style.animationDuration = (Math.random()*3+3) + "s";
+        document.body.appendChild(balloon);
+        setTimeout(()=> balloon.remove(), 6000);
       }
-    });
+    }
+
+    function cutCake() {
+      document.getElementById("cake").style.display = "block";
+      setTimeout(()=>{
+        document.querySelector(".slice").style.display = "block";
+      },2000);
+    }
+
+    function showMemories() {
+      document.getElementById("memories").style.display = "block";
+      let pics = document.querySelectorAll("#memories img");
+      pics.forEach((pic, i)=>{
+        setTimeout(()=> pic.style.opacity=1, i*1500);
+      });
+    }
+
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
+
+    function lightCrackers() {
+      let canvas = document.getElementById("fireworks");
+      let ctx = canvas.getContext("2d");
+      canvas.style.display = "block";
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      function createFirework(x, y) {
+        for (let i=0; i<50; i++) {
+          particles.push({
+            x: x,
+            y: y,
+            dx: Math.random()*4-2,
+            dy: Math.random()*4-2,
+            life: 100,
+            color: `hsl(${Math.random()*360},100%,50%)`
+          });
+        }
+      }
+
+      canvas.addEventListener("click", e => {
+        createFirework(e.clientX, e.clientY);
+      });
+
+      function animate() {
+        ctx.fillStyle = "rgba(0,0,0,0.2)";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        particles.forEach((p,i)=>{
+          ctx.fillStyle = p.color;
+          ctx.fillRect(p.x,p.y,4,4);
+          p.x+=p.dx;
+          p.y+=p.dy;
+          p.life--;
+          if(p.life<=0) particles.splice(i,1);
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
   </script>
 </body>
 </html>
+
